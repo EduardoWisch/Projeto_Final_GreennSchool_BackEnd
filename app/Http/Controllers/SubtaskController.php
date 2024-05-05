@@ -23,7 +23,7 @@ class SubtaskController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'id_task' => 'required',
-            'title'=> 'required|string|max:50|unique:subtasks,title', // Corrigido
+            'title'=> 'required|string|max:50|unique:subtasks,title', 
             'due_date'=> 'required|date',
             'description' => 'string|nullable'
         ], [
@@ -82,7 +82,7 @@ class SubtaskController extends Controller
     public function update(Request $request, Subtask $subtask)
     {
         $validation = Validator::make($request->all(), [
-            'title'=> 'string|max:50|unique:subtasks,title', // Corrigido
+            'title'=> 'string|max:50|unique:subtasks,title', 
             'due_date'=> 'date',
             'description' => 'string'
         ], [

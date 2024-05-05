@@ -27,7 +27,6 @@ Route::prefix('task')->controller(TaskController::class)->group(function(){
     Route::put('/{task}', 'update');
     Route::delete('/{task}', 'destroy');
     Route::delete('/all/{task}', 'destroyAll');
-    //testes
 });
 
 // Route::post('/subtask', [SubtaskController::class, 'create']);
