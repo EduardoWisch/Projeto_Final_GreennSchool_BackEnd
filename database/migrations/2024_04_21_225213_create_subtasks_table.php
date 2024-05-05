@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('subtasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_task')->constrained('tasks');
+            $table->foreignId('id_task')->constrained('tasks')->onDelete('cascade');
             $table->string('title');
             $table->longText('description')->nullable();
             $table->enum('status', ['pending', 'completed'])->default('pending');

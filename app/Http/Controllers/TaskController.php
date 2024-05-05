@@ -25,7 +25,7 @@ class TaskController extends Controller
         $validation = Validator::make($request->all(), [
             'title'=> 'required|string|max:50|unique:tasks,title',
             'due_date'=> 'required|date',
-            'description' => 'string'
+            'description' => 'string|nullable'
         ], [
             'title.required' => 'O campo Título é obrigatório',
             'title.unique' => 'Este título já está sendo utilizado',
@@ -98,6 +98,16 @@ class TaskController extends Controller
                 'message' => 'Essa tarefa possui subtarefas, exclua elas primeiro'
             ]);
         }
+
+        $task->delete();
+
+        return response()->json([
+            'message' => 'Tarefa deletada'
+          ]);
+    }
+
+    public function destroyAll(Task $task)
+    {
 
         $task->delete();
 
