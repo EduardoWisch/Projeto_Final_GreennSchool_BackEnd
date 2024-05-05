@@ -25,7 +25,7 @@ class SubtaskController extends Controller
             'id_task' => 'required',
             'title'=> 'required|string|max:50|unique:subtasks,title', // Corrigido
             'due_date'=> 'required|date',
-            'description' => 'string'
+            'description' => 'string|nullable'
         ], [
             'title.required' => 'O campo Título é obrigatório',
             'title.unique' => 'Este título já está sendo utilizado',

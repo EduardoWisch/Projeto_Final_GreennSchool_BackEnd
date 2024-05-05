@@ -67,7 +67,7 @@ class TaskController extends Controller
         $validation = Validator::make($request->all(), [
             'title'=> 'string|max:50|unique:tasks,title',
             'due_date'=> 'date',
-            'description' => 'string',
+            'description' => 'string|nullable',
             'status' => 'string|in:pending,completed'
         ], [  
             'title.unique' => 'Este título já está sendo utilizado',
